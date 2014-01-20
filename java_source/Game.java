@@ -1,4 +1,4 @@
-package libgdx_game.java_source;
+package java_source;
 
 import com.badlogic.gdx.ApplicationListener;
 import com.badlogic.gdx.Gdx;
