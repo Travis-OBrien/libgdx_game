@@ -96,4 +96,17 @@ public class WorldController extends InputAdapter {
 
         testSprites[selectedSprite].setRotation(rotation);
     }
+
+    @Override
+    public boolean keyUp(int keycode) {
+        // Reset game world.
+        if(keycode == Input.Keys.R) {
+            init();
+        }
+        else if (keycode == Input.Keys.SPACE){
+            selectedSprite = (selectedSprite + 1) % testSprites.length;
+        }
+
+        return false;
+    }
 }
