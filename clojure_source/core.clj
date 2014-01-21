@@ -4,6 +4,8 @@
 
 ;WorldController
 
+(println "hi")
+
 (defn world-controller-init
   [])
 
