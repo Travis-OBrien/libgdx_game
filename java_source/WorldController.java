@@ -10,14 +10,15 @@ import com.badlogic.gdx.math.MathUtils;
  */
 public class WorldController {
 //a
-    private Sprite testSprites[];
+    public Sprite testSprites[];
     private int selectedSprite;
 
     public WorldController() {
+        init();
     }
 
     private void init(){
-
+        initTestObjects();
     }
 
     private void initTestObjects(){
