@@ -1,9 +1,7 @@
-
-
+import clojure.lang.AFunction;
 import com.badlogic.gdx.ApplicationListener;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.GL10;
-
 
 /**
  * Created by Travis on 1/20/14.
@@ -16,6 +14,17 @@ public class Game implements ApplicationListener {
     private WorldController worldController;
     private WorldRenderer worldRenderer;
 
+    AFunction render_fn;
+
+    public Game(AFunction render_fn)
+    {
+        this.render_fn = render_fn;
+    }
+
+    public void reLoad(AFunction render_fn)
+    {
+        this.render_fn = render_fn;
+    }
 
     @Override
     public void create() {
@@ -31,13 +40,14 @@ public class Game implements ApplicationListener {
 
     @Override
     public void render() {
+        render_fn.call();
         if(!paused){
             worldController.update(Gdx.graphics.getDeltaTime());
         }
         Gdx.gl.glClearColor(0x64/255.0f,
-                            0x95/255.0f,
-                            0xed/255.0f,
-                            0xff/255.0f);
+                0x95/255.0f,
+                0xed/255.0f,
+                0xff/255.0f);
         Gdx.gl.glClear(GL10.GL_COLOR_BUFFER_BIT);
         worldRenderer.render();
     }
@@ -55,5 +65,9 @@ public class Game implements ApplicationListener {
     @Override
     public void dispose() {
         worldRenderer.dispose();
+    }
+
+    public boolean isPaused() {
+        return paused;
     }
 }
