@@ -3,6 +3,7 @@ package java_source;
 import com.badlogic.gdx.Application;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
+import com.badlogic.gdx.InputAdapter;
 import com.badlogic.gdx.graphics.Pixmap;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Sprite;
@@ -13,7 +14,7 @@ import java.security.Key;
 /**
  * Created by Travis on 1/20/14.
  */
-public class WorldController {
+public class WorldController extends InputAdapter {
 //a
     public Sprite[] testSprites;
     private int selectedSprite;
@@ -23,6 +24,7 @@ public class WorldController {
     }
 
     private void init(){
+        Gdx.input.setInputProcessor(this);
         initTestObjects();
     }
 
