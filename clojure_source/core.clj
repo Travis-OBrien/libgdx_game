@@ -1,6 +1,6 @@
 (ns clojure-source.core
   (:import (com.badlogic.gdx.backends.lwjgl LwjglApplication)
-           (java_source AppConfig Game)))
+           AppConfig Game))
 
 ;WorldController
 

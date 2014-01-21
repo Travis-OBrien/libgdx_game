@@ -1,10 +1,9 @@
-package java_source;
+
 
 import com.badlogic.gdx.ApplicationListener;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.GL10;
-import java_source.WorldController;
-import java_source.WorldRenderer;
+
 
 /**
  * Created by Travis on 1/20/14.

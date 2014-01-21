@@ -1,4 +1,4 @@
-package java_source;
+
 
 import com.badlogic.gdx.backends.lwjgl.LwjglApplicationConfiguration;
 
